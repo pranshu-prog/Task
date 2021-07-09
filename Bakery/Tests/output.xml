@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210709 17:29:54.631" rpa="false" schemaversion="2">
+<suite id="s1" name="Bakery" source="C:\Users\hp\Desktop\Bakery\bakery\Tests\bakery.robot">
+<test id="s1-t1" name="Load URL of bakerykart">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210709 17:29:55.537" level="INFO">Opening browser 'Chrome' to base url 'https://www.bakerykart.com/'.</msg>
+<status status="PASS" starttime="20210709 17:29:55.535" endtime="20210709 17:30:43.387"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210709 17:30:43.389" endtime="20210709 17:30:44.148"/>
+</kw>
+<kw name="Open the Bakerykart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${explore}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210709 17:30:44.151" endtime="20210709 17:30:45.482"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${explore}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210709 17:30:45.484" level="INFO">Clicking element 'xpath=//div[@class='navigation f-left']/nav/ul/li[2]'.</msg>
+<status status="PASS" starttime="20210709 17:30:45.483" endtime="20210709 17:30:57.341"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>xpath=//div[@class='product-listing']/ul/li</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210709 17:30:57.382" level="INFO">${count} = 18</msg>
+<status status="PASS" starttime="20210709 17:30:57.341" endtime="20210709 17:30:57.382"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210709 17:30:57.382" endtime="20210709 17:30:57.384"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${k}</var>
+<value>1</value>
+<value>${count}</value>
+<iter>
+<var name="${k}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${prod_Name}</var>
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210709 17:30:57.728" level="INFO">${prod_Name} = 811 Dark Chocolate - 1 kg - Callebaut</msg>
+<status status="PASS" starttime="20210709 17:30:57.386" endtime="20210709 17:30:57.728"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${prod_Name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210709 17:30:57.728" endtime="20210709 17:30:57.729"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210709 17:30:57.730" endtime="20210709 17:30:58.225"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${prod_Name}' == 'Cacao Barry Cara Crakine'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210709 17:30:58.225" endtime="20210709 17:30:58.226"/>
+</kw>
+<status status="PASS" starttime="20210709 17:30:57.385" endtime="20210709 17:30:58.226"/>
+</iter>
+<iter>
+<var name="${k}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${prod_Name}</var>
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210709 17:30:58.290" level="INFO">${prod_Name} = 823 Milk Chocolate - 1kg Callebaut</msg>
+<status status="PASS" starttime="20210709 17:30:58.227" endtime="20210709 17:30:58.290"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${prod_Name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210709 17:30:58.290" endtime="20210709 17:30:58.291"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210709 17:30:58.292" endtime="20210709 17:30:58.654"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${prod_Name}' == 'Cacao Barry Cara Crakine'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210709 17:30:58.655" endtime="20210709 17:30:58.656"/>
+</kw>
+<status status="PASS" starttime="20210709 17:30:58.227" endtime="20210709 17:30:58.656"/>
+</iter>
+<iter>
+<var name="${k}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${prod_Name}</var>
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210709 17:30:58.719" level="INFO">${prod_Name} = Cacao Barry Alunga Milk Couverture</msg>
+<status status="PASS" starttime="20210709 17:30:58.656" endtime="20210709 17:30:58.719"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${prod_Name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210709 17:30:58.720" endtime="20210709 17:30:58.721"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210709 17:30:58.721" endtime="20210709 17:30:59.020"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${prod_Name}' == 'Cacao Barry Cara Crakine'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210709 17:30:59.021" endtime="20210709 17:30:59.022"/>
+</kw>
+<status status="PASS" starttime="20210709 17:30:58.656" endtime="20210709 17:30:59.022"/>
+</iter>
+<iter>
+<var name="${k}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${prod_Name}</var>
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210709 17:30:59.085" level="INFO">${prod_Name} = Cacao Barry Ambre Java Milk Couverture</msg>
+<status status="PASS" starttime="20210709 17:30:59.023" endtime="20210709 17:30:59.085"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${prod_Name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210709 17:30:59.086" endtime="20210709 17:30:59.087"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210709 17:30:59.088" endtime="20210709 17:30:59.406"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${prod_Name}' == 'Cacao Barry Cara Crakine'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210709 17:30:59.407" endtime="20210709 17:30:59.408"/>
+</kw>
+<status status="PASS" starttime="20210709 17:30:59.022" endtime="20210709 17:30:59.408"/>
+</iter>
+<iter>
+<var name="${k}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${prod_Name}</var>
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210709 17:30:59.462" level="INFO">${prod_Name} = Cacao Barry Cara Crakine</msg>
+<status status="PASS" starttime="20210709 17:30:59.408" endtime="20210709 17:30:59.462"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${prod_Name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210709 17:30:59.463" endtime="20210709 17:30:59.464"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210709 17:30:59.464" endtime="20210709 17:30:59.899"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${prod_Name}' == 'Cacao Barry Cara Crakine'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<msg timestamp="20210709 17:30:59.900" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210709 17:30:59.899" endtime="20210709 17:30:59.901"/>
+</kw>
+<status status="PASS" starttime="20210709 17:30:59.408" endtime="20210709 17:30:59.901"/>
+</iter>
+<status status="PASS" starttime="20210709 17:30:57.385" endtime="20210709 17:30:59.901"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Expected_Item}</arg>
+<arg>xpath=//div[@class='product-listing']/ul/li[${k}]/div[2]/h3</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210709 17:30:59.906" level="INFO">${Expected_Item} = xpath=//div[@class='product-listing']/ul/li[5]/div[2]/h3</msg>
+<status status="PASS" starttime="20210709 17:30:59.902" endtime="20210709 17:30:59.907"/>
+</kw>
+<status status="PASS" starttime="20210709 17:30:44.150" endtime="20210709 17:30:59.907"/>
+</kw>
+<kw name="Click into Item">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Expected_Item}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210709 17:30:59.911" level="INFO">Clicking element 'xpath=//div[@class='product-listing']/ul/li[5]/div[2]/h3'.</msg>
+<status status="PASS" starttime="20210709 17:30:59.910" endtime="20210709 17:31:09.759"/>
+</kw>
+<status status="PASS" starttime="20210709 17:30:59.909" endtime="20210709 17:31:09.759"/>
+</kw>
+<kw name="sleep and close">
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210709 17:31:12.774" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210709 17:31:09.764" endtime="20210709 17:31:12.774"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210709 17:31:12.774" endtime="20210709 17:31:24.839"/>
+</kw>
+<status status="PASS" starttime="20210709 17:31:09.763" endtime="20210709 17:31:24.839"/>
+</kw>
+<status status="PASS" starttime="20210709 17:29:55.532" endtime="20210709 17:31:24.842"/>
+</test>
+<status status="PASS" starttime="20210709 17:29:54.665" endtime="20210709 17:31:24.851"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Bakery">Bakery</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210709 17:29:55.509" level="WARN">Imported resource file 'C:\Users\hp\Desktop\Bakery\bakery\Utility\commonUtil.robot' is empty.</msg>
+</errors>
+</robot>
